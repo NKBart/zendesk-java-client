@@ -44,10 +44,52 @@ public class Metric {
     protected ZendeskComboMinutes requesterWaitTimeMinutes;
     @JsonProperty("created_at")
     protected Date createdAt;
+    @JsonProperty("reply_time_in_minutes")
+    protected ZendeskComboMinutes replyTimeInMinutes;
+    @JsonProperty("updated_at")
+    protected Date updatedAt;
+    @JsonProperty("latest_comment_added_at")
+    protected Date latestCommentAddedAt;
+    @JsonProperty("on_hold_time_in_minutes")
+    protected ZendeskComboMinutes onHoldTimeInMinutes;
+
+    public ZendeskComboMinutes getOnHoldTimeInMinutes() {
+        return onHoldTimeInMinutes;
+    }
+
+    public void setOnHoldTimeInMinutes(ZendeskComboMinutes onHoldTimeInMinutes) {
+        this.onHoldTimeInMinutes = onHoldTimeInMinutes;
+    }
+
+    public void setLatestCommentAddedAt(Date latestCommentAddedAt) {
+        this.latestCommentAddedAt = latestCommentAddedAt;
+    }
+
+    public Date getLatestCommentAddedAt() {
+        return latestCommentAddedAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public ZendeskComboMinutes getReplyTimeInMinutes() {
+        return replyTimeInMinutes;
+    }
+
+    public void setReplyTimeInMinutes(ZendeskComboMinutes replyTimeInMinutes) {
+        this.replyTimeInMinutes = replyTimeInMinutes;
+    }
+
 
     public Long getId() {
         return id;
     }
+
 
     public void setId(Long id) {
         this.id = id;
@@ -213,7 +255,7 @@ public class Metric {
                 '}';
     }
 
-    protected class ZendeskComboMinutes {
+    public class ZendeskComboMinutes {
 
         @JsonProperty("calendar")
         protected Long calendarMinutes;
